@@ -31,7 +31,7 @@ public class TestMaxGenerics {
 		int result = MaxGenerics.maxInt(1, 12, 123);
 		Assert.assertEquals(123, result);
 	}
-	
+
 	@Test
 	public void TestMaxOnFirstPositionFloat_Happy() {
 		float result = MaxGenerics.maxFloat(123.0f, 12.0f, 1.0f);
@@ -48,5 +48,23 @@ public class TestMaxGenerics {
 	public void TestMaxOnThirdPositionFloat_Happy() {
 		float result = MaxGenerics.maxFloat(1.0f, 12.0f, 123.0f);
 		Assert.assertEquals(123.0f, result);
+	}
+
+	@Test
+	public void TestMaxOnFirstPositionString_Happy() {
+		String result = MaxGenerics.maxString("GHI", "DEF", "ABC");
+		Assert.assertEquals("GHI", result);
+	}
+
+	@Test
+	public void TestMaxOnSecondPositionString_Happy() {
+		String result = MaxGenerics.maxString("DEF", "GHI", "ABC");
+		Assert.assertEquals("GHI", result);
+	}
+
+	@Test
+	public void TestMaxOnThirdPositionString_Happy() {
+		String result = MaxGenerics.maxString("ABC", "DEF", "GHI");
+		Assert.assertEquals("GHI", result);
 	}
 }
