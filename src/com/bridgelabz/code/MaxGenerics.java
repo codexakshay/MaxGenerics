@@ -14,28 +14,8 @@ public class MaxGenerics {
 		return objectA.compareTo(objectB);
 	}
 
-	public static int maxInt(Integer a, Integer b, Integer c) {
-		int max = a;
-
-		if (b.compareTo(a) > 0)
-			max = b;
-		if (c.compareTo(b) > 0)
-			max = c;
-		return max;
-	}
-
-	public static float maxFloat(Float a, Float b, Float c) {
-		float max = a;
-
-		if (b.compareTo(a) > 0)
-			max = b;
-		if (c.compareTo(b) > 0)
-			max = c;
-		return max;
-	}
-
-	public static String maxString(String a, String b, String c) {
-		String max = a;
+	public static <T extends Comparable<T>> T max(T a, T b, T c) {
+		T max = a;
 
 		if (b.compareTo(a) > 0)
 			max = b;
@@ -45,8 +25,8 @@ public class MaxGenerics {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Max Integer : " + maxInt(123, 1234, 12345));
-		System.out.println("Max Float : " + maxFloat(123.0f, 1234.0f, 12345.0f));
-		System.out.println("Max String : " + maxString("ABC", "DEF", "GHI"));
+		System.out.println("Max Integer : " + max(123, 1234, 12345));
+		System.out.println("Max Float : " + max(123.0f, 1234.0f, 12345.0f));
+		System.out.println("Max String : " + max("ABC", "DEF", "GHI"));
 	}
 }
